@@ -1,9 +1,18 @@
 ﻿<Properties StartupConfiguration="{E40D48E7-2B8C-4CE0-A5EA-CDA88D33A7BE}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="GR.Tests/TestAssemblyTests.cs">
+    <Files>
+      <File FileName="GR/Program.cs" Line="93" Column="29" />
+      <File FileName="GR.Tests/TestAssemblyTests.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="GR" expanded="True" selected="True" />
+          <Node name="GR" expanded="True">
+            <Node name="GR" expanded="True" />
+            <Node name="GR.Tests" expanded="True">
+              <Node name="TestAssemblyTests.cs" selected="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

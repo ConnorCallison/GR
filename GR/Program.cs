@@ -47,6 +47,7 @@ namespace GR
             foreach (var item in Items)
             {
                 Console.WriteLine(" - Item: {0}", item.Name);
+
                 if (item.Name != "Aged Brie" && !item.Name.Contains("Backstage passes"))
                 {
                     if (item.Quality > 0)
@@ -67,18 +68,16 @@ namespace GR
                         {
                             if (item.SellIn < 11)
                             {
-                                if (item.Quality < 50)
-                                {
-                                    item.Quality = item.Quality + 1;
-                                }
+
+                                item.Quality = item.Quality + 2;
+
                             }
 
                             if (item.SellIn < 6)
                             {
-                                if (item.Quality < 50)
-                                {
-                                    item.Quality = item.Quality + 1;
-                                }
+
+                                item.Quality = item.Quality + 1;
+
                             }
                         }
                     }
@@ -109,10 +108,8 @@ namespace GR
                 }
                 else
                 {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality = item.Quality + 1;
-                    }
+                    item.Quality = item.Quality + 1;
+
                 }
             }
             Console.WriteLine("Inventory update complete");
@@ -121,10 +118,32 @@ namespace GR
 
     public class Item
     {
+
         public string Name { get; set; }
 
         public int SellIn { get; set; }
 
-        public int Quality { get; set; }
+        private int _quality { get; set; }
+
+        public int Quality
+        {
+            get
+            {
+                return this._quality;
+            }
+            set
+            {
+                if ((this._quality + value) >= 50)
+                {
+                    this._quality = 50;
+                }
+                else
+                {
+                    this._quality = value;
+                }
+            }
+        }
+
+        public string Type { get; set; }
     }
 }
