@@ -14,58 +14,52 @@ namespace GR.Tests
             {
                 Items = new List<Item>
                 {
-                    new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20,Type = "Standard"},
-                    new Item {Name = "Aged Brie", SellIn = 2, Quality = 1,Type = "Standard"},
-                    new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7,Type = "Standard"},
-                    new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 8,Type = "Standard"},
-                    new Item
+                    new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
+                    new AgedBrie {Name = "Aged Brie", SellIn = 2, Quality = 1},
+                    new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
+                    new Sulfuras {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 8},
+                    new BackstagePasses
                     {
                         Name = "Backstage passes to a TAFKAL80ETC concert",
                         SellIn = 15,
-                        Quality = 20,
-                        Type = "Standard"
+                        Quality = 20
                     },
-                    new Item
+                    new BackstagePasses
                     {
                         Name = "Backstage passes to a D498FJ9FJ2N concert",
                         SellIn = 10,
-                        Quality = 30,
-                        Type = "Standard"
+                        Quality = 30
                     },
-                    new Item
+                    new BackstagePasses
                     {
                         Name = "Backstage passes to a FH38F39DJ39 concert",
                         SellIn = 5,
-                        Quality = 33,
-                        Type = "Standard"
+                        Quality = 33
                     },
-                    new Item
+                    new BackstagePasses
                     {
                         Name = "Backstage passes to a I293JD92J44 concert",
                         SellIn = 6,
-                        Quality = 27,
-                        Type = "Standard"
+                        Quality = 27
                     },
-                    new Item
+                    new BackstagePasses
                     {
                         Name = "Backstage passes to a O2848394820 concert",
                         SellIn = 1,
-                        Quality = 13,
-                        Type = "Standard"
+                        Quality = 13
                     },
-                    new Item
+                    new BackstagePasses
                     {
                         Name = "Backstage passes to a DEEEADMEEET concert",
                         SellIn = 0,
-                        Quality = 25,
-                        Type = "Standard"
+                        Quality = 25
                     },
                     new Item
                     {
                         Name = "Conjured Mana Cake",
                         SellIn = 3,
                         Quality = 6,
-                        Type = "Conjured"
+                        DailyDegredation = 2
                     }
                 }
             };
@@ -83,6 +77,60 @@ namespace GR.Tests
         public void DexterityVest_Quality_ShouldDecreaseByOne()
         {
             Assert.Equal(19, _app.Items.First(x => x.Name == "+5 Dexterity Vest").Quality);
+        }
+
+        [Fact]
+        public void AgedBrie_Quality_ShouldIncreaseByOne()
+        {
+            Assert.Equal(2, _app.Items.First(x => x.Name == "Aged Brie").Quality);
+        }
+
+        [Fact]
+        public void ElixirOfMongoose_Quality_ShouldDecreaseByOne()
+        {
+            Assert.Equal(6, _app.Items.First(x => x.Name == "Elixir of the Mongoose").Quality);
+        }
+
+        [Fact]
+        public void TAFKAL80ETC_Quality_ShouldIncreaseByOne()
+        {
+            Assert.Equal(21, _app.Items.First(x => x.Name == "Backstage passes to a TAFKAL80ETC concert").Quality);
+        }
+
+        [Fact]
+        public void FH38F39DJ39_Quality_ShouldIncreaseByTwo()
+        {
+            Assert.Equal(32, _app.Items.First(x => x.Name == "Backstage passes to a D498FJ9FJ2N concert").Quality);
+        }
+
+        [Fact]
+        public void D498FJ9FJ2N_Quality_ShouldIncreaseByThree()
+        {
+            Assert.Equal(36, _app.Items.First(x => x.Name == "Backstage passes to a FH38F39DJ39 concert").Quality);
+        }
+
+        [Fact]
+        public void I293JD92J44_Quality_ShouldIncreaseByTwo()
+        {
+            Assert.Equal(29, _app.Items.First(x => x.Name == "Backstage passes to a I293JD92J44 concert").Quality);
+        }
+
+        [Fact]
+        public void O2848394820_Quality_ShouldIncreaseByThree()
+        {
+            Assert.Equal(16, _app.Items.First(x => x.Name == "Backstage passes to a O2848394820 concert").Quality);
+        }
+
+        [Fact]
+        public void DEEEADMEEET_Quality_ShouldBeZero()
+        {
+            Assert.Equal(0, _app.Items.First(x => x.Name == "Backstage passes to a DEEEADMEEET concert").Quality);
+        }
+
+        [Fact]
+        public void ConjuredManaCake_Quality_ShouldBe4()
+        {
+            Assert.Equal(4, _app.Items.First(x => x.Name == "Conjured Mana Cake").Quality);
         }
     }
 }

@@ -3,7 +3,6 @@
 /Users/connorcallison/Desktop/GR/GR/bin/Debug/GR.pdb
 /Users/connorcallison/Desktop/GR/GR/bin/Debug/Newtonsoft.Json.dll
 /Users/connorcallison/Desktop/GR/GR/bin/Debug/Newtonsoft.Json.xml
-/Users/connorcallison/Desktop/GR/GR/obj/Debug/GR.csprojAssemblyReference.cache
 /Users/connorcallison/Desktop/GR/GR/obj/Debug/GR.csproj.CoreCompileInputs.cache
 /Users/connorcallison/Desktop/GR/GR/obj/Debug/GR.csproj.CopyComplete
 /Users/connorcallison/Desktop/GR/GR/obj/Debug/GR.exe
