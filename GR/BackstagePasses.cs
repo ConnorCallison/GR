@@ -6,7 +6,7 @@ namespace GR
         public override void DailyUpdate()
         {
             //Increment by 1 if concert in 11+ days
-            if (this.SellIn > 11)
+            if (this.SellIn >= 11)
             {
                 this.Quality += 1;
             }
